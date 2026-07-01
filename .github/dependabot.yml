@@ -1,11 +1,21 @@
+# version: 2
+# updates:
+#   - package-ecosystem: "npm"
+#     directory: "/"
+#     schedule:
+#       interval: "weekly"
+#       day: "monday"
+#       time: "09:00"
+#     open-pull-requests-limit: 1
+#     reviewers:
+#       - "lab-engineering-3/engineers"
 version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-    open-pull-requests-limit: 5
+      interval: "cron" # Swapped from "weekly" to "cron"
+      expression: "* * * * 3" # Triggers at the 15th minute of every hour (e.g. 1:15, 2:15)
+    open-pull-requests-limit: 1
     reviewers:
-      - "lab-engineering/platform"
+      - "lab-engineering-3/engineers"
